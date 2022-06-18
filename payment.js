@@ -22,10 +22,12 @@ function proceed(event){
     document.querySelector("#amt1").innerHTML=x;
     document.querySelector("#amt2").innerHTML=x;
 
+    
+
 
     let cartitem =JSON.parse(localStorage.getItem("cartPage")) || [];
     document.querySelector("#quanT").innerHTML=cartitem.length;
-// ------------------------------------------------------------------------------------
+
     let details = JSON.parse(localStorage.getItem("AddData"))||[];
     console.log(details);
 

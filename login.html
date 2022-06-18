@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@300&family=Open+Sans&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f3f3f3;
+        }
+        
+        .inner-con {
+            font-family: 'Roboto', sans-serif;
+            margin: auto;
+            width: 350px;
+            height: 600px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            margin-top: 50px;
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        #p1,
+        #p2 {
+            font-weight: 400;
+        }
+        
+        #p3 {
+            font-weight: 200;
+            color: rgb(0, 0, 0);
+            font-size: 13px;
+        }
+        
+        #p1 {
+            margin-top: -13px;
+            border-bottom: 1px solid rgb(190, 186, 186);
+            padding-bottom: 10px;
+            font-family: "poppins";
+        }
+        
+        img {
+            width: 250px;
+            align-self: center;
+        }
+        
+        #email,
+        #pass {
+            border: none;
+            border-bottom: 1px solid rgb(231, 127, 148);
+            margin-bottom: 10px;
+            margin-top: 20px;
+            border-left: 4px solid crimson;
+            height: 30px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            outline: none;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #submit {
+            background-color: #fc2779;
+            border: none;
+            color: white;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .font {
+            font-family: "poppins";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner-con">
+            <h1 class="font">Sign In</h1>
+            <p id="p1">To quickly find your favourites items, saved addresses and payments.</p>
+            <p id="p2">Register and earn 2000 reward points</p>
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQC2QtvcX1BYW8A2vBPwpGbMNm1SZkb-fZfa2qexNllmRHxohgZ" alt="">
+            <form>
+                <input type="text" placeholder="Enter Phone Number or Email" name="" id="email">
+                <input placeholder="Enter Password" type="password" id="pass">
+                <input type="submit" name="" id="submit">
+            </form>
+
+            <p id="p3">By continuing, you agree that you have read and accept our <span style="text-decoration: underline;">T&Cs</span> and <span style="text-decoration: underline;">Privacy Policy</span> .</p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var data = JSON.parse(localStorage.getItem("nykaauserdata"))
+    document.querySelector("form").addEventListener("submit", mylogin)
+        // console.log(data[0].email)
+    function mylogin() {
+        event.preventDefault()
+        checkUser();
+    }
+
+    function checkUser() {
+        let uname = document.querySelector("#email").value;
+        let upasw = document.querySelector("#pass").value;
+        let is = false;
+        for (var i = 0; i < data.length; i++) {
+            if (uname == data[i].email && upasw == data[i].password) {
+                is = true;
+                let NAMEE=data[i].name;
+                localStorage.setItem("userNAMEE",NAMEE)
+
+            }
+        }
+        if (is) {
+            // alert("Login sucessfully")
+
+                //localStorage.setItem("user",)
+                 window.location.href="navbar.html"
+
+
+        } else {
+            alert("Wrong password")
+        }
+    }
+</script>

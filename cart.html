@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to cart </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+         /* * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        } */
+
+
+
+                /* Navbar */
+
+
+                #navbar {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-around;
+  background-image: url("https://adn-static1.nykaa.com/media/wysiwyg/2022/common-strip-17-6-22.jpg");
+  height: 45px;
+
+}
+
+#logos>div {
+  display: flex;
+  /* border: 1px solid black; */
+  justify-content: space-around;
+  background-color: transparent;
+  /* width:150px; */
+  margin-top: 10px;
+}
+
+#logos>div>img {
+  width: 40px;
+  cursor: pointer;
+  height: 30px;
+  margin-top: -5px;
+  margin-left: 30px;
+
+
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 16px;
+  width: 500px;
+  margin-right: 200px;
+  margin-left: 150px;
+  cursor: pointer;
+  font-family: sans-serif;
+  margin-top: 13px;
+  /* border: 1px solid red; */
+}
+
+h2 {
+  font-size: 14px;
+  /* width:150px; */
+  cursor: pointer;
+  font-weight: lighter;
+  font-family: sans-serif;
+  margin-right: 10px;
+  margin-top: 5px;
+  /* border: 1px solid red; */
+}
+
+h1:hover {
+  color: white;
+}
+
+h2:hover {
+  color: white;
+}
+
+
+
+        #cardnav {
+            width: 20%;
+            height: 40px;
+            display: flex;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #cardnav>h1 {
+            font-size: 50px;
+            font-weight: bold;
+            color: #fc428a;
+            margin-left: 10px;
+            margin-top: -10px;
+        }
+        #navcon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        #navcon>p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #product {
+            width: 98%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: auto;
+            margin-top: 10px;
+        }
+        #product>div {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid rebeccapurple;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #product>div>:nth-child(1) {
+            width: 10%;
+            justify-content: stretch;
+        }
+
+        #product>div>:nth-child(1)>img {
+            width: 100%;
+        }
+
+        #product>div>:nth-child(2) {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 20px 0px 0px;
+        }
+
+        #product>div>:nth-child(2)>:nth-child(1) {
+            width: 50%;
+        }
+
+        #product>div>:nth-child(2)>:nth-child(2) {
+            width: 2%;
+        }
+
+        #product>div>:nth-child(2)>:nth-child(2)>img {
+            width: 100%;
+            background-color: white;
+        }
+        #deleteimg{
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+        }
+        
+    
+    
+        #card_details{
+            border: transparent ;
+            width: 85%;
+            justify-content: center;
+            margin: auto;
+            height: auto;
+            margin-bottom: 5%;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin-top: 5%;
+            }
+
+            .Total_amount{
+                margin-top: 5%;
+
+            }
+           #box{
+                border: 1px solid ;
+                width: 25%;
+                font-weight: bold;
+           }
+           #Pay{
+            color: white;
+            background-color:  #fc428a;
+            height: 50px;
+            width: 350px;
+            font-weight: bold;
+            border: transparent;
+            font-size: 25px;
+            cursor: pointer;
+           }
+           #promo_code{
+            color: white;
+            background-color:  #fc428a;
+            height: 50px;
+            width: 350px;
+            font-weight: bold;
+            border: transparent;
+            font-size: 25px;
+            cursor: pointer;
+           }
+           table td{
+            font-size: 25px;
+           }
+           #total{
+            font-size: 25px;
+           }
+           #show_finalpayment{
+            width: 350px;
+            height: auto;
+            margin-bottom: 5%;
+            font-size: 20px;
+            font-weight: bold;
+            color:blue ;
+            text-align: center;
+            padding: 10px;
+
+           }
+        
+    </style>
+</head>
+<body>
+
+
+    <div id="navbar">
+        <div>
+          <h1 id="blink">BEAUTY BONNZA Get you Daily Dose of Amazing Deals</h1>
+        </div>
+        <div id="logos">
+          <div>
+            <img src="https://i.pinimg.com/originals/63/b3/d9/63b3d9ccb82555c2c9611ba41a62044d.png" alt="">
+            <h2>Get App |</h2>
+          </div>
+        </div>
+        <div id="logos">
+          <div>
+            <img src="https://www.freeiconspng.com/thumbs/location-icon-png/location-outline-icon-9.png" alt="" />
+            <h2>Store & Events |</h2>
+          </div>
+        </div>
+        <div id="logos">
+          <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/1332/1332607.png" alt="">
+            <h2>Gift Card |</h2>
+          </div>
+        </div>
+        <div id="logos">
+          <div>
+            <img src="https://iconape.com/wp-content/png_logo_vector/question-circle.png" alt="" />
+            <h2>Help |</h2>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="cardnav"> 
+    <h1>
+    </h1>
+      <div id="navcon">
+          <p>Shopping Bag</p>
+          <p>(</p>
+          <p id="cou"></p>
+          <p>)</p>
+    </div>  
+    <div id="product"> </div>
+    <div id="card_details">
+    <div id="table">
+        <table>
+            <thead> 
+                <tr>
+                  <th> <h1 style="margin-left: 400px;font-size: 25px;">Payment Details </h1> </th>
+                  </tr>
+              </thead>
+              <tbody id="body"></tbody>
+              </table>
+    </div class="Total_amount">
+    
+        <h2 style="color: #fc428a; margin: 20px"> Cart Details </h2>
+        <div style="margin: 20px;"  id="total"> </div>
+        <button style="margin:20px" id="Pay"> Proceed For Payment </button>
+        <button style="margin:20px" id="promo_code"> Apply For Promo Code  </button>
+        <div> <textarea id="show_finalpayment"> </textarea></div>
+    </div>
+   
+
+</body>
+</html>
+<script>
+  let productcont=document.querySelector("#product");
+    let cartitem =JSON.parse(localStorage.getItem("cartPage")) || [];
+    console.log(cartitem);
+
+    display_product_data(cartitem);  
+
+  
+
+    let navCount = document.querySelector("#cou")
+    navCount.textContent = cartitem.length;
+
+
+    function display_product_data(cartitem)
+    {
+
+      productcont.innerHTML=""
+
+        cartitem.forEach( function(element,index){
+
+        let box = document.createElement("div");
+        box.setAttribute("id","box")
+        // image div 
+        let imgdiv = document.createElement("div");
+        let image = document.createElement("img");
+         image.setAttribute('src', element.image);
+        // name div
+        let prorem = document.createElement("div");
+        let detaildiv = document.createElement("div");
+        let name = document.createElement("p");
+        name.innerText=element.name;
+        // price details 
+        let price= document.createElement("p");
+        price.innerText=element.price;
+          // rating details  
+    let rating= document.createElement("p");
+        rating.innerText=element.rating;
+         // delete image div 
+         let remove = document.createElement("div");
+     let deleteCard = document.createElement("img");
+    deleteCard.setAttribute("id","deleteimg")
+
+        deleteCard.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTue2o4GYBj0YWlNFLb3jpF219QMwVzj8bJGdaEIybCK9COmZUfuNalIsZ-9LsRDgSTViY&usqp=CAU"
+        deleteCard.addEventListener("click", function () {
+                deletedata(index)
+            })
+            
+            imgdiv.append(image);
+            remove.append(deleteCard);
+            detaildiv.append(name, price, rating);
+            prorem.append(detaildiv, remove)
+            box.append(imgdiv, prorem);
+
+           
+         
+           
+    
+    document.querySelector("#product").append(box);
+
+
+
+
+        })
+    }
+    function deletedata(INDEX) {
+        let filter = cartitem.filter(function (el,index)
+         { 
+            return index!=INDEX;
+        })
+        cartitem = filter;
+        localStorage.setItem("cartPage", JSON.stringify(cartitem))
+        window.location.reload();
+        display_product_data(cartitem)
+    }
+    let total = 0
+    
+    function paydetail(cartitem) {
+        cartitem.forEach( function(element){
+        let tr =document.createElement("tr");
+
+       let td1 = document.createElement("td");
+       td1.innerText=element.name;
+       td1.style.padding="20px"
+       td1.style.color="rgb(234, 87, 87)"
+
+       let td2 = document.createElement("td");
+       td2.setAttribute("id", "price");
+
+       td2.innerText= element.price;
+            
+            console.log(td2,"Iam td2")
+            total = total+Number(element.price)
+            
+        
+       tr.append(td1,td2);
+        document.querySelector("#body").append(tr);
+        document.getElementById("total").innerText="Total = "+ total; 
+        });
+    }
+paydetail(cartitem);
+document.querySelector("#Pay").addEventListener("click",paymentfunc);
+
+function paymentfunc(){
+    window.location.href="AddressPage.html";
+}
+
+    // let td3= document.getElementById(price);
+    //     console.log(td3);
+    let blink = document.getElementById("blink");
+setInterval(function () {
+  blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+}, 500)
+
+console.log(total,"Total")
+document.querySelector("#promo_code").addEventListener("click",promocodefuc);
+
+function promocodefuc(){
+  console.log(total)
+  if(total<30000){
+    let disc= Math.floor(total-(total*0.3));
+    console.log(disc)
+    document.querySelector("#show_finalpayment").innerHTML="After 30% discount  : "+ disc;
+    localStorage.setItem("cart-amount",disc);
+  }
+  
+}
+
+
+
+
+ 
+   
+</script>
