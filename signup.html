@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&family=Poppins:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@300&family=Open+Sans&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <title>SignUp</title>
+    <style>
+        body {
+            background-color: #f3f3f3;
+        }
+        
+        .container {
+            width: 400px;
+            height: 600px;
+            margin: auto;
+            margin-top: 30px;
+        }
+        
+        .inner-con {
+            font-family: 'Roboto', sans-serif;
+            width: 90%;
+            height: 100%;
+            background-color: white;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            border-radius: 15px;
+        }
+        
+        h4 {
+            border-bottom: 1px solid rgb(207, 205, 205);
+            padding-bottom: 15px;
+            width: 90%;
+            text-align: center;
+            color: #454a5e;
+        }
+        
+        #submit {
+            background-color: #fc2779;
+            border-radius: 5px;
+            margin-top: 20px;
+            color: white;
+            width: 90%;
+            cursor: pointer;
+        }
+        
+        input {
+            border: none;
+            border-bottom: 1px solid gray;
+            width: 70%;
+            height: 50px;
+            margin-bottom: 10px;
+            outline: none;
+        }
+        
+        p {
+            margin-bottom: 40px;
+        }
+        
+        form {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner-con">
+            <h4>REGISTER</h4>
+            <p id="hh" style="font-size: 13px;">Register to Earn <span style="color:#fc2779;">2000  Reward Points!</span> </p>
+            <form id="form">
+                <input placeholder="Name" type="text" id="name">
+                <input placeholder="Phone Number" type="number" name="" id="num">
+                <input placeholder="Email Address" type="text" name="" id="email" required>
+                <input placeholder="Create Password" type="password" id="pass" required>
+                <input id="submit" type="submit">
+                <button onclick="LOGINFuncTion()" id="submit">ALREADY A USER SIGN IN</button>
+            </form>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var form = document.querySelector("form");
+    var userData = JSON.parse(localStorage.getItem("nykaauserdata")) || []
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        var data = {
+            name: form.name.value,
+            number: form.num.value,
+            email: form.email.value,
+            password: form.pass.value,
+
+        }
+        if (checkEmail(data.email) == true) {
+            userData.push(data);
+            localStorage.setItem("nykaauserdata", JSON.stringify(userData));
+            alert("signup sucessfully")
+            window.location.href = "login.html"
+
+        } else {
+            alert("Email already exist")
+        }
+
+    })
+
+    function checkEmail(email) {
+        var filter = userData.filter(function(el) {
+            return email == el.email
+        })
+        if (filter.length > 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
+
+
+    function LOGINFuncTion(){
+        window.location.href="login.html"
+    }
+
+
+
+
+
+</script>
