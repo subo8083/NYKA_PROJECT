@@ -4,7 +4,7 @@ Clone of E-commerce website Nykaa , done during the unit 2 (web101) project at m
 ## Live link :  https://chimerical-chimera-b05f10.netlify.app/
 
 
-## The website contains several functionality, below is the demo pictures of the website pages that is built along with team members:
+## The website contains several functionality, below is the demo pictures of the website pages along with the descripton of each page that has been build by me and my team members:
 
 # 1) Landing Page:
 
