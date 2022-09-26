@@ -1,6 +1,6 @@
 # NYKA_PROJECT
-Clone of E-commerce website Nykaa , done during the unit 2 (web101) project at masai along with 4 team members.
-
+Clone of E-commerce website Nykaa which deals on the products based on Fashion, makeups, various womens items.
+It is a collaborative project which is done with the help of 5 members.
 ## Live link :  https://chimerical-chimera-b05f10.netlify.app/
 
 
