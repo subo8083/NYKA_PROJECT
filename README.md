@@ -11,7 +11,7 @@ It is a collaborative project which is done with the help of 5 members.
 ![Screenshot (201)](https://user-images.githubusercontent.com/103572638/192354719-9af1083f-e9ee-410c-9885-4e32b1d6712a.png)
 
 
-the PAges contains navbar along with products icons which will be redirected to the product page when clicked once, but if the user has not created the account then it be asked to login first.
+The Page contains navbar along with products icons which will be redirected to the product page when clicked once, but if the user has not created the account then it be asked to login first.
 
 # 2) Account:
 
